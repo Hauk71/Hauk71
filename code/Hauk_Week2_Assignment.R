@@ -47,7 +47,7 @@ df1
 
 #adding error bars
 arrows(b.plot, df.mean$Mean-df.sd$StanDev,
-       b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3)
+       b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3) #out of order in the script
 
 
 
@@ -79,13 +79,13 @@ barplot(df.mean$Mean, names.arg = df.mean$Factor,  ylim = c(0,60), xlab = 'Expla
 
 #error bars
 arrows(b.plot, df.mean$Mean-df.sd$StanDev,
-      b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3)
-
+      b.plot, df.mean$Mean+df.sd$StanDev,angle=90,code=3) #You forgot to create b.plot before running this. Need "b.plot <-" at the start of line 78 
+#how do you have error bars on the exported plot when they don't work in your code? Plot dimensions are also off.
 
 #scatter plot 
 plot(df1$Z ~ df1$Y),
 
-plot(df1$Z ~ df1$X),
+plot(df1$Z ~ df1$X),#why the commas? This just confuses R.
 
 plot(df1$Z ~ df1$X, xlab = "Independent", ylab = "Dependent")
 
