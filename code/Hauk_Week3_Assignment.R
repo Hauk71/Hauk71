@@ -3,7 +3,7 @@
 # about 9 hours, 
 
 # (2) Give one reason why information on the time between peak flow events up- and downstream could be valuable? (4 pts)
-#This could be valuable information for future reference to allow for better understand of how water flow occurs in this area and how the surrounding environment is impacted.
+#This could be valuable information for future reference to allow for better understand of how water flow occurs in this area and how the surrounding environment is impacted.#Why is this valuable? You are most of the way to an answer
 
 # Package scavenger hunt! (12 pts each)
 
@@ -48,7 +48,7 @@ plot(Y)
 #install package 
 
 install.packages('vegan')
-library(vegan)
+library(vegan) #This is a really useful set of functions you used here that we will visit later in the semester...unfortunately they do not directly calculate Simpson diversity.
 
 #given example
 
