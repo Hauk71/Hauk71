@@ -7,7 +7,7 @@
 
 # part 2 seq24 to seq16 and seq5 to seq16 are equally the furthest data points from one another. this is because each set of data points has a collective 10 point difference between one another. Where as the rest of the data can be connected in less than 10 points. 
 
-
+#This is not for the Dryad dataset. These data do not have lat/lon attached to them like the other data.
 
 # For your scripting assignment we will use the "ge_data" data frame found in the "stability" package.
   # Install the "stability" package, load it into your R environment, and use the data() function to load the "ge_data". (2 points)
@@ -52,6 +52,8 @@ summary(Hauk)
 
 
   #the data with better fit would be the Yield to environmental because the R squared value is significantly higher  
+#What does "yield to environment mean"? Also a remarkably similar statement to the person who sits next to you...
+#Also be careful of how you use 'significantly' in this class, this is an incorrect use.  
   #The R squared value represents the line of best fit and shows which data plot is the best based on which points follow a better trend. 
   #This data shows that there is a lower R squared between the Yield and the genotype data compared to the significant higher R squared value between the Yield and the Env. showing that the env follows a better trend line. 
 
