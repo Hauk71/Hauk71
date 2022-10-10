@@ -71,7 +71,7 @@ hist(data$RepTime.sec)
 # for example if a type of bacteria would consume theses organisms at about 150,000 seconds it would be harder for them to gain enough energy to reproduce instead they need that energy to survive.
 # The unicellular organisms would have a better chance at reproducing (mainly) prior to but can still reproduce better afterwards.
 
-
+#Good hypothesis!
 
 
 
