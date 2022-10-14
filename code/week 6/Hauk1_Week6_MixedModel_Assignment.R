@@ -33,7 +33,7 @@ plot(glmm.mod1)
 glmm.mod2 <- glmmPQL(eaten~activity.level * toadfish.cue.treatment, family = binomial, random = ~ 1 | block, data = Excel)
 
 plot(glmm.mod2)
-
+#You are on the right track, but these models were supposed to include 3 predictors rather than 2.
 
 #additive affects
 gam.mod1 <- gam(eaten~activity.level, family = gaussian, random = list(block=~ 1), data = Excel)
@@ -47,13 +47,21 @@ Excel$prop.cons <- Excel$eaten/Excel$prey
 
 # (Q1) - The code in line 8 is performing two operations at once. What are they? (2 pts)
 #returning the first part of the object and the last part of the object
+#? I'm not sure what you mean.
 
 # (Q2) - Did the interactive effect change which variables predict proportional consumption? How, specifically, did the results change? (5 pts)
 #the interactive effect did change the variables, the results changed by shifting the x axis to a higher number and quantity. 
+summary(glmm.mod1)
+summary(glmm.mod2)
+#I'm not sure what you mean by shifting the x axis. You should have looked at the change in predictors significance.
+
 
 # (Q3) - Plot the residuals of both models. Do you think either model is a good fit? Why or why not? (3 pts)
 plot(gam.mod1$residuals, ylim = c(-.1,.1))
-#yes because there is no correlation between the variables
+#Supposed to plot the glmm residuals, not the gam.
+
+#yes because there is no correlation between the variables\
+
 # Re-run both models as generalized additive models instead (using gam). Then compare the AIC of both models. (4 points each)
 
 gam.mod4 <- gam(eaten~activity.level + toadfish.cue.treatment, family = poisson, random = ~ 1 | block, data = Excel)
@@ -65,6 +73,7 @@ r.squaredGLMM(glmm.mod)
 r.squaredGLMM(glmm.mod1)
 r.squaredGLMM(glmm.mod2)
 #The first one has the higher line of best fit because it has a higher R2m value
+#You are supposed to be comparing the GAM models with AIC.
 
 # (Q5) - Based on the residuals of your generalized additive models, how confident are you in these results? (2 pts)
 #I am confident in my results because there is no correlation between the data points and variables
