@@ -34,8 +34,10 @@ ggplot(data)  +
 
 # (1) - Which species is most likely to be r-selected prey and which its primary predator? (2 pts)
 #D. mendotae is the most likely to be the r selected prey because it has the most offspring and less parenting so the population will increase and decrease at a rapid pace.
+#Who is the primary predator?
 # What is one relationship the third species MIGHT have to the first two? (2 pts)
 # The data could be mutualistic becaue the popualation of the blue line is always at its highest when the other plots are at their highest point. And they drop off when the others drop off showing that they helpe one another and support each others living. 
+#If you look closely the peaks appear in a consistent order rather than at the same time. Not saying there couldn't be mutualism, but your argument is flawed.
 #Now copy/paste in the Lotka-Volterra function, plotting script, and load the "deSolve" package from the tutorial:
 install.packages('deSolve')
 library(deSolve)
@@ -80,13 +82,15 @@ LotVmod <- function (Time, State, Pars) {
     matplot(out[,-1], type = "l", xlab = "time", ylab = "population")
     legend("topright", c("Limcalanus", "D.mendotae"), lty = c(1,2), col = c(1,2), box.lwd = 0)
 #alpha changed decreasing 1 - By decreaseing the rate of predation growth, this shows that the growth rate is based around the population of predators affecting the final population of the k selected species
+#Alpha is prey growth, not predator.
 #Beta changed by decrease .3 - The rate of predation is decreased to help slow the death of the k selected species allowing the population to grow at a faster rate
+#slow death of r species, not K.
 #gamma and delta did not change
     
     
 # I believe the enviornment could be another paramater changes. This would have a dramatic impact on the relationship between the predator and prey and in turn affect growth rates and consumption rates, altering the graph to becoming something simmilar to what is present. 
 # The environment could also affect the data dramaticly in the opposite direction resulting in vary differnet results
-    
+  #True, but eh question was about changes to the L-V models, not external factors.
     
     
     
