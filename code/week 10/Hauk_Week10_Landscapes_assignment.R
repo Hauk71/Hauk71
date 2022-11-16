@@ -63,12 +63,12 @@ HabNoSpace.rda
 anova(HabNoSpace.rda, perm.max = 10000)
 RsquareAdj(HabNoSpace.rda)
 
-
+#Where are the sprawlers? You did everything right for Trichoptera but don't have anything to compare them to.
 
 #Part 2: What is your interpretation of the pattern for each group individually, and the two in comparison, based on their mobility? (5 points)
 #With the habitat to space RDA there is a higher conditional number showing that the interaction between the space and the habitat is much higher in comparison to the interaction between the species and the space 
 #this shows that the species is more stationary compared to other organisms which is also shown by both of these species not being the best at flying and or crawling 
-
+#Your answer is great for the first part of the question but doesn't get to the second part (i.e. comparing Trichoptera and sprawlers).
 
 #Part 3: For each of your chosen groups of bugs, perform variable selection for the habitat data rather than the AEM data. Which habitat variables are significant for each? (10 points)
   # Definitions for the habitat column names:
@@ -92,12 +92,19 @@ Sprawlers.mat <- RsquareAdj(Space.rda)$adj.r.squared
 
 aem.fwd <- forward.sel(HabitatbyPatch.mat,aem.df, adjR2thresh=Space.r2a)
 
+#Think about what the code is actually doing here. Changing the name of the object you are creating does not change the operation.
+#Because of the slight random variability in the foward selection process you got different answers, but that has nothing to do with trichoptera and sprawlers.
+#Habitat was supposed to replace space, not the bugs, in the model.
+
 #the Sprawlers were closer to significance than the Trichoptera with a data point of 0.068 compared to Trichoptera with a point of 0.076.
+#What do you mean by this? The question was which variables were significant.
 
 #Part 4: How do you expect selecting both the spatial and the habitat variables would change the results of the RDAs from Part 1 above? (5 points)
   #(You do not need to redo the RDAs, unless you *want* to.)
 
-# I believe selecting both of the spatial and habitat variables would decrease the difference between the conditional and constrained. Because they both have an impact on one another and an unique interaction with the species, this will drop the difference between the values. 
+# I believe selecting both of the spatial and habitat variables would decrease the difference between the conditional and constrained. Because they both have an impact on one another and an unique interaction with the species, this will drop the difference between the values.
+#This might happen, but it's not relevant to the question. Without selecting variables for habitat, you are likely overfitting that part of the model.
+#So the "real" influence of space is likely much stronger than what you generated with the above models.
 
 
 
