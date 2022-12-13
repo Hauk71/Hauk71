@@ -1,7 +1,7 @@
 #Final coding project
 
 #Working question 
-#How do the levels of dissolved oxygen in a marine environment affet the vaious organisms' survivability?
+#How do the levels of dissolved oxygen in a marine environment affect the various organisms' suitability?
 install.packages("readxl")
 library(readxl)
 setwd('C:/GitHub/Hauk71/code/Final projet')
@@ -52,13 +52,26 @@ Shell$Name <- ShellName
 ShellMeans <- aggregate(x =Shelldata, by = list(Shell$Name), FUN = 'mean')
 LandMMeans <- aggregate(x =LandMdata, by = list(LandM$Name), FUN = 'mean')
 
-colnames(SurvivalMeans)
-ord <- lm(ShellMeans ~ Survival, LandMMeans)
+ShellMeans1 <- as.data.frame(sapply(ShellMeans, as.numeric))
+LandMMeans1 <- as.data.frame(sapply(LandMMeans, as.numeric))
 
-#histograms
+unlist(ShellMeans1)
+unlist(Survival)
+unlist(LandMMeans1)
+
+colnames(ShellMeans)
+LinearModel <- lm(ShellMeans1$Average.DO..mg.L. ~ Survival$Survival, LandMMeans1$Shell.length..mm)
+
+#Plotting
 as.numeric(as.character(Shelldata$Average.DO..mg.L.))
 
 
+#plot shows the comparison between the levels of dissolved oxygen and the shell length and consistency
+plot(Shelldata$Shell.length..mm ~ Shelldata$Average.DO..mg.L.)
+
+plot(Shelldata$Shell.length..mm ~ Shelldata$Average.DO..mg.L., xlab = "Dissolved oxygen", ylab = "Shell Length", main = "Affects of DO on Shell Length")
+
+#histograms show the overall frequency of each of the data groups
 hist(Shelldata$Average.DO..mg.L.)
 
 hist(Shelldata$Average.DO..mg.L.,
@@ -72,11 +85,14 @@ hist(Shelldata$Average.DO..mg.L.,
 hist(Shelldata$Shell.length..mm,
      main="Shell length",
      xlab="Shell length",
-     xlim=c(1,50),
+     xlim=c(1,40),
      col="darkmagenta",
      freq=TRUE
 )
-
+#Box plot 
+#when looking at both of these bar graph notice a drop in the dissolved oxygen level there is a drop in the shell size and an increase in dissovled oxygen levels shows an increase in shell size there is a direct correlation 
+barplot(Shelldata$Shell.length..mm,  ylim = c(0,40), xlab = 'Shell amount', ylab= 'size', main = "Shell length")
+barplot(Shelldata$Average.DO..mg.L., ylim = c(0,8), xlab = 'Time', ylab= 'Do levels', main = "example")
 
 
 
