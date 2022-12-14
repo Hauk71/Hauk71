@@ -62,6 +62,8 @@ unlist(LandMMeans1)
 colnames(ShellMeans)
 LinearModel <- lm(ShellMeans1$Average.DO..mg.L. ~ Survival$Survival, LandMMeans1$Shell.length..mm)
 
+anova(LinearModel)
+
 #Plotting
 as.numeric(as.character(Shelldata$Average.DO..mg.L.))
 
