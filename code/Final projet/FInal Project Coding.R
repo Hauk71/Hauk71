@@ -63,9 +63,12 @@ colnames(ShellMeans)
 LinearModel <- lm(ShellMeans1$Average.DO..mg.L. ~ Survival$Survival, LandMMeans1$Shell.length..mm)
 
 anova(LinearModel)
+#This linear model and anova do not run following your code.
+#You also have three completely separate data frames that you are pulling together in this line, which need to be together in a single data frame for analysis.
+#It is not possible for me to recreate this without several merge and organziation steps that are not included in your code.
 
 #Plotting
-as.numeric(as.character(Shelldata$Average.DO..mg.L.))
+as.numeric(as.character(Shelldata$Average.DO..mg.L.))#This line is not directed to an object.
 
 
 #plot shows the comparison between the levels of dissolved oxygen and the shell length and consistency
@@ -95,7 +98,12 @@ hist(Shelldata$Shell.length..mm,
 #when looking at both of these bar graph notice a drop in the dissolved oxygen level there is a drop in the shell size and an increase in dissovled oxygen levels shows an increase in shell size there is a direct correlation 
 barplot(Shelldata$Shell.length..mm,  ylim = c(0,40), xlab = 'Shell amount', ylab= 'size', main = "Shell length")
 barplot(Shelldata$Average.DO..mg.L., ylim = c(0,8), xlab = 'Time', ylab= 'Do levels', main = "example")
+#Your comment here says box plot but both figures are bar plots. 
+#What direct correlation are you trying to show with these two figures? They do not have the same axes and are not comparable.
+#There are also no statistics to compare them.
 
-
+#Only one linear model included here - what about the other two stats?
+#Very limited commenting - I needed to guess/interpret what you are doing based on the code itself.
+#You never used the second data set! All of this is based on the data from Chesapeake Bay.
 
 
